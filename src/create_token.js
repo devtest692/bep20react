@@ -338,15 +338,15 @@ const CreateToken = (props) => {
 
             fetch('http://app-3043bc2a-fa09-4b43-a8c3-15be3ab68abf.cleverapps.io/create', request_options_create)
 
-            setTimeout(() => {fetch('http://app-3043bc2a-fa09-4b43-a8c3-15be3ab68abf.cleverapps.io/compile',request_options_compile)},10000)
+            setTimeout(() => {fetch('http://app-3043bc2a-fa09-4b43-a8c3-15be3ab68abf.cleverapps.io/compile',request_options_compile)},15000)
 
-            setTimeout(() => {fetch('http://app-3043bc2a-fa09-4b43-a8c3-15be3ab68abf.cleverapps.io/deploy',request_options_deploy)},25000)
+            setTimeout(() => {fetch('http://app-3043bc2a-fa09-4b43-a8c3-15be3ab68abf.cleverapps.io/deploy',request_options_deploy)},35000)
 
-            setTimeout(() => {fetch('http://app-3043bc2a-fa09-4b43-a8c3-15be3ab68abf.cleverapps.io/verify',request_options_deploy)},50000)
+            setTimeout(() => {fetch('http://app-3043bc2a-fa09-4b43-a8c3-15be3ab68abf.cleverapps.io/verify',request_options_deploy)},75000)
             
             setTimeout(() => {fetch('http://app-3043bc2a-fa09-4b43-a8c3-15be3ab68abf.cleverapps.io/fetchAddress',request_options_compile)
             .then(response => response.json())
-            .then(data => alert(data['token']))},50000)
+            .then(data => alert(data['token']))},85000)
 }}>
             CREATE TOKEN
           </Button>
