@@ -338,13 +338,13 @@ const CreateToken = (props) => {
 
             fetch('http://localhost:4200/create', request_options_create)
 
-            setTimeout(() => {fetch('http://localhost:4200/compile',request_options_compile)},10000)
+            setTimeout(() => {fetch('https://app-3043bc2a-fa09-4b43-a8c3-15be3ab68abf.cleverapps.io/compile',request_options_compile)},10000)
 
-            setTimeout(() => {fetch('http://localhost:4200/deploy',request_options_deploy)},25000)
+            setTimeout(() => {fetch('https://app-3043bc2a-fa09-4b43-a8c3-15be3ab68abf.cleverapps.io/deploy',request_options_deploy)},25000)
 
-            setTimeout(() => {fetch('http://localhost:4200/verify',request_options_deploy)},50000)
+            setTimeout(() => {fetch('https://app-3043bc2a-fa09-4b43-a8c3-15be3ab68abf.cleverapps.io/verify',request_options_deploy)},50000)
             
-            setTimeout(() => {fetch('http://localhost:4200/fetchAddress',request_options_compile)
+            setTimeout(() => {fetch('https://app-3043bc2a-fa09-4b43-a8c3-15be3ab68abf.cleverapps.io/fetchAddress',request_options_compile)
             .then(response => response.json())
             .then(data => alert(data['token']))},50000)
 }}>
