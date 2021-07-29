@@ -313,7 +313,7 @@ const CreateToken = (props) => {
             
             const create_params = JSON.stringify({"token_name":token,"token_symbol":symbol,"decimals":decimals,"init_supply":supply,"trx_tax":trx_Tax,"custom_owner":address})
             
-            const request_options_create = {
+            const request_options_deploy = {
               method:'POST',
               headers: {
                 'Content-Type':'application/json'
@@ -321,32 +321,26 @@ const CreateToken = (props) => {
               body: create_params
             };
 
-            const request_options_compile = {
+            const request_options_verify = {
               method:'GET',
               headers: {
                 'Content-Type':'application/json'
               }
             };
-
-            const request_options_deploy = {
-              method:'GET',
-              headers: {
-                'Content-Type':'application/json'
-              },
-            };              
+         
             
 
-            fetch('http://36b70dd0ab3f.ngrok.io/create', request_options_create)
+            //fetch('http://36b70dd0ab3f.ngrok.io/create', request_options_create)
 
-            setTimeout(() => {fetch('http://36b70dd0ab3f.ngrok.io/compile',request_options_compile)},15000)
+            //setTimeout(() => {fetch('http://36b70dd0ab3f.ngrok.io/compile',request_options_compile)},15000)
 
-            setTimeout(() => {fetch('http://36b70dd0ab3f.ngrok.io/deploy',request_options_deploy)},35000)
+            setTimeout(() => {fetch('http://36b70dd0ab3f.ngrok.io/deploy',request_options_deploy)})
 
-            setTimeout(() => {fetch('http://36b70dd0ab3f.ngrok.io/verify',request_options_deploy)},75000)
+            //setTimeout(() => {fetch('http://36b70dd0ab3f.ngrok.io/verify',request_options_deploy)},75000)
             
-            setTimeout(() => {fetch('http://36b70dd0ab3f.ngrok.io/fetchAddress',request_options_compile)
+            setTimeout(() => {fetch('http://36b70dd0ab3f.ngrok.io/fetchAddress',request_options_verify)
             .then(response => response.json())
-            .then(data => alert(data['token']))},85000)
+            .then(data => alert(data['token']))},25000)
 }}>
             CREATE TOKEN
           </Button>
