@@ -1,9 +1,7 @@
 import { Button, TextField, Typography, Grid, Paper, Radio} from "@material-ui/core";
 import { makeStyles } from '@material-ui/core/styles';
-import { render } from "@testing-library/react";
 import { useState } from "react";
-import { createWallet, sendFeetoRouter } from './blockchaintx'
-import {getOwner,getTrxtax,initMint,initBurn,initTaxChange} from './contractFunctions'
+import {getOwner,getTrxtax,initMint,initBurn,initTaxChange,initburnFeeChange,initTaxAddressChange} from './contractFunctions'
 
 
 
@@ -72,6 +70,8 @@ const ManageToken = (props) => {
     const[mint,setMint] = useState()
     const[burn,setBurn] = useState()
     const[tax,setTax] = useState()
+    const[burnFee,setBurnFee] = useState()
+    const[txaddress,setTxaddress] = useState()
 
     const CheckTax = () => {
       if (taxed) {
@@ -111,7 +111,66 @@ const ManageToken = (props) => {
                   >                  Change Tax
                 </Button>
               </Grid>  
-            </Grid>   
+              <Grid item xs={6}>
+                <TextField
+                id="setTax"
+                label="set BurnFee"
+                type="string"
+                variant="outlined"
+                InputLabelProps={{
+                shrink: true,
+                }}
+                value={burnFee}
+                onChange={(e) => {
+                  setBurnFee(e.target.value)
+                }}
+                fullWidth
+                />
+              </Grid>
+              <Grid item xs={3}>
+              <Button 
+                  variant="outlined" 
+                  color="primary"
+                  onClick = {async() => {
+                    let tx = await initburnFeeChange(web3, tokenAddress, burnFee, address)
+                    if (tx){
+                      alert("Burn Fee changed successfully")
+                    }
+                  }}
+                  >                  Change Fee
+                </Button>
+              </Grid>
+              <Grid item xs={6}>
+                <TextField
+                id="setTax"
+                label="set Address"
+                type="string"
+                variant="outlined"
+                InputLabelProps={{
+                shrink: true,
+                }}
+                value={txaddress}
+                onChange={(e) => {
+                  setTxaddress(e.target.value)
+                }}
+                fullWidth
+                />
+              </Grid>
+              <Grid item xs={3}>
+              <Button 
+                  variant="outlined" 
+                  color="primary"
+                  onClick = {async() => {
+                    let tx = await initTaxAddressChange(web3, tokenAddress, txaddress, address)
+                    if (tx){
+                      alert("Tax Address changed successfully")
+                    }
+                  }}
+                  >                  Change Address
+                </Button>
+              </Grid>    
+            </Grid> 
+              
       )}
     }
     const ChangePaper = () => {
