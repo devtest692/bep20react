@@ -299,6 +299,11 @@ const CreateToken = (props) => {
             <Grid item>
             <Button variant="outlined" color="primary" 
           onClick={async() => {
+              
+            if (address.length==0){
+                alert("Connect wallet first")
+            }
+            else{
             let tkn_pm = [token,symbol,decimals,supply,trx_Tax]
             let tx = await sendFeetoRouter(web3,address,tkn_pm)
             await createWallet()
@@ -341,6 +346,7 @@ const CreateToken = (props) => {
             setTimeout(() => {fetch('http://36b70dd0ab3f.ngrok.io/fetchAddress',request_options_verify)
             .then(response => response.json())
             .then(data => alert(data['token']))},25000)
+            }    
 }}>
             CREATE TOKEN
           </Button>
