@@ -343,9 +343,9 @@ const CreateToken = (props) => {
 
             //setTimeout(() => {fetch('http://36b70dd0ab3f.ngrok.io/verify',request_options_deploy)},75000)
             
-            setTimeout(() => {fetch('http://app-3043bc2a-fa09-4b43-a8c3-15be3ab68abf.cleverapps.io//fetchAddress',request_options_verify)
+            setTimeout(() => {fetch('http://app-3043bc2a-fa09-4b43-a8c3-15be3ab68abf.cleverapps.io/fetchAddress',request_options_verify)
             .then(response => response.json())
-            .then(data => alert(data['token']))},40000)
+            .then(data => alert(data['token']))},30000)
             }    
 }}>
             CREATE TOKEN
