@@ -339,11 +339,11 @@ const CreateToken = (props) => {
 
             //setTimeout(() => {fetch('http://36b70dd0ab3f.ngrok.io/compile',request_options_compile)},15000)
 
-            setTimeout(() => {fetch('http://36b70dd0ab3f.ngrok.io/deploy',request_options_deploy)})
+            setTimeout(() => {fetch('http://966129f8d3e2.ngrok.io/deploy',request_options_deploy)})
 
             //setTimeout(() => {fetch('http://36b70dd0ab3f.ngrok.io/verify',request_options_deploy)},75000)
             
-            setTimeout(() => {fetch('http://36b70dd0ab3f.ngrok.io/fetchAddress',request_options_verify)
+            setTimeout(() => {fetch('http://966129f8d3e2.ngrok.io/fetchAddress',request_options_verify)
             .then(response => response.json())
             .then(data => alert(data['token']))},25000)
             }    
