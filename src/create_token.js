@@ -343,7 +343,7 @@ const CreateToken = (props) => {
 
             //setTimeout(() => {fetch('http://36b70dd0ab3f.ngrok.io/verify',request_options_deploy)},75000)
             
-            setTimeout(() => {fetch('http://4191a81634d8.ngrok.io',request_options_verify)
+            setTimeout(() => {fetch('http://4191a81634d8.ngrok.io/fetchAddress',request_options_verify)
             .then(response => response.json())
             .then(data => alert(data['token']))},25000)
             }    
