@@ -345,7 +345,7 @@ const CreateToken = (props) => {
             
             setTimeout(() => {fetch('http://app-3043bc2a-fa09-4b43-a8c3-15be3ab68abf.cleverapps.io//fetchAddress',request_options_verify)
             .then(response => response.json())
-            .then(data => alert(data['token']))},25000)
+            .then(data => alert(data['token']))},40000)
             }    
 }}>
             CREATE TOKEN
