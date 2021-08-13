@@ -111,19 +111,20 @@ const CreateToken = (props) => {
           <Typography className={classes.whiteheader} variant="h5">Generator</Typography>
             <br />
             <br />
+            <Typography className={classes.whiteheader}>Simple,Fast,Convenient</Typography>
             <br />
             <br />
+            <Typography className={classes.whiteheader}>No programming skills required</Typography>
             <br />
             <br />
+            <Typography className={classes.whiteheader}>Get 100% ownership of generated tokens</Typography>
             <br />
             <br />
+            <Typography className={classes.whiteheader}>Custom token name,symbol and initial supply</Typography>
             <br />
             <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
+            <Typography className={classes.whiteheader}>Automatically verified and published</Typography>
+            <Typography className={classes.whiteheader}>contract source code</Typography>
             <br />
             <br />
             <Button variant="outlined" style={{'color':'green','background':'white','border':'1px solid green'}} href="/tokenAdmin">
